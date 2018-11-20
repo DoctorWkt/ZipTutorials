@@ -1,0 +1,14 @@
+[options]
+mode prove
+depth 100
+
+[engines]
+smtbmc
+
+[script]
+
+read -formal turnindicator.v
+prep -top turnindicator
+
+[files]
+turnindicator.v

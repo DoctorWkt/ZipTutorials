@@ -1,0 +1,59 @@
+
+icetime topological timing analysis report
+==========================================
+
+Info: max_span_hack is enabled: estimate is conservative.
+
+Report for critical path:
+-------------------------
+
+        lc40_14_16_7 (LogicCell40) [clk] -> lcout: 0.896 ns
+     0.896 ns net_54288 (dut.ctr[15])
+        odrv_14_16_54288_54312 (Odrv4) I -> O: 0.548 ns
+        t303 (Span4Mux_h4) I -> O: 0.465 ns
+        t302 (Span4Mux_v4) I -> O: 0.548 ns
+        t301 (LocalMux) I -> O: 0.486 ns
+        inmux_13_19_54716_54733 (InMux) I -> O: 0.382 ns
+        lc40_13_19_1 (LogicCell40) in3 -> lcout: 0.465 ns
+     3.790 ns net_50574 ($abc$1082$n48)
+        t200 (LocalMux) I -> O: 0.486 ns
+        inmux_13_19_54700_54755 (InMux) I -> O: 0.382 ns
+        lc40_13_19_5 (LogicCell40) in1 -> lcout: 0.589 ns
+     5.248 ns net_50578 ($abc$1082$n46_1)
+        odrv_13_19_50578_54804 (Odrv4) I -> O: 0.548 ns
+        t215 (Span4Mux_h4) I -> O: 0.465 ns
+        t214 (LocalMux) I -> O: 0.486 ns
+        inmux_11_18_46417_46448 (InMux) I -> O: 0.382 ns
+        lc40_11_18_0 (LogicCell40) in1 -> lcout: 0.589 ns
+     7.718 ns net_42296 ($abc$1082$n95)
+        odrv_11_18_42296_46405 (Odrv4) I -> O: 0.548 ns
+        t129 (LocalMux) I -> O: 0.486 ns
+        inmux_11_18_46431_46477 (InMux) I -> O: 0.382 ns
+        lc40_11_18_5 (LogicCell40) in0 -> lcout: 0.662 ns
+     9.796 ns net_42301 ($abc$1082$n152)
+        odrv_11_18_42301_38358 (Odrv4) I -> O: 0.548 ns
+        t125 (Span4Mux_v4) I -> O: 0.548 ns
+        t124 (LocalMux) I -> O: 0.486 ns
+        inmux_9_17_38139_38177 (InMux) I -> O: 0.382 ns
+        lc40_9_17_1 (LogicCell40) in1 -> lcout: 0.589 ns
+    12.349 ns net_34326 ($abc$1082$n162)
+        odrv_9_17_34326_18516 (Odrv12) I -> O: 0.796 ns
+        t101 (Span12Mux_h12) I -> O: 0.796 ns
+        t100 (LocalMux) I -> O: 0.486 ns
+        t99 (IoInMux) I -> O: 0.382 ns
+        t98 (ICE_GB) USERSIGNALTOGLOBALBUFFER -> GLOBALBUFFEROUTPUT: 0.910 ns
+        t97 (gio2CtrlBuf) I -> O: 0.000 ns
+        t96 (GlobalMux) I -> O: 0.227 ns
+    15.947 ns seg_1_9_glb_netwk_3_4
+
+Resolvable net names on path:
+     0.896 ns ..  3.325 ns dut.ctr[15]
+     3.790 ns ..  4.659 ns $abc$1082$n48
+     5.248 ns ..  7.129 ns $abc$1082$n46_1
+     7.718 ns ..  9.134 ns $abc$1082$n95
+     9.796 ns .. 11.760 ns $abc$1082$n152
+    12.349 ns .. 12.349 ns $abc$1082$n162
+
+Total number of logic levels: 6
+Total path delay: 15.95 ns (62.71 MHz)
+
