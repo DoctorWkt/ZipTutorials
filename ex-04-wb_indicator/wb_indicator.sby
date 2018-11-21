@@ -1,0 +1,18 @@
+[tasks]
+cvr
+prf
+
+[options]
+cvr: mode cover
+prf: mode prove
+depth 100
+
+[engines]
+smtbmc
+
+[script]
+read -formal wb_indicator.v
+prep -top wb_indicator
+
+[files]
+wb_indicator.v
