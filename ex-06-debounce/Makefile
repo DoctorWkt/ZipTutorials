@@ -18,4 +18,30 @@ debounce_tb: debounce.cpp obj_dir/Vdebounce__ALL.a
 
 .PHONY: clean
 clean:
-	rm -rf obj_dir/ debounce/ debounce_tb debounce.vcd
+	rm -rf obj_dir/ debounce/ debounce_tb debounce.vcd \
+	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin
+
+
+## The following are rules to make the TinyFPGA bitstream
+PROJ = TinyFPGA_B
+PIN_DEF = pins.pcf
+DEVICE = lp8k
+
+.PHONY: bin
+bin: $(PROJ).rpt $(PROJ).bin
+
+%.blif: %.v
+	yosys -p 'synth_ice40 -top $(PROJ) -blif $@' $<
+
+%.asc: $(PIN_DEF) %.blif
+	arachne-pnr -d 8k -P cm81 -o $@ -p $^
+
+%.bin: %.asc
+	icepack $< $@
+
+%.rpt: %.asc
+	icetime -d $(DEVICE) -mtr $@ $<
+
+.PHONY: prog
+prog: $(PROJ).bin
+	tinyfpgab --program $<

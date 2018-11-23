@@ -7,13 +7,8 @@
 //
 module	debounce(i_clk, i_btn, o_debbtn);
 
-`ifdef VERILATOR
   parameter	CLOCK_RATE_HZ = 16_000_000; // 16MHz clock
   parameter	SLOW_RATE_HZ  =  1_000_000; // 1uS clock
-`else
-  parameter	CLOCK_RATE_HZ = 16_000_000; // 16MHz clock
-  parameter	SLOW_RATE_HZ  =        100; // 10mS clock
-`endif
 
   input i_clk;				    // System clock
   input i_btn;				    // Raw button value
