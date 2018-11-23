@@ -45,3 +45,7 @@ bin: $(PROJ).rpt $(PROJ).bin
 .PHONY: prog
 prog: $(PROJ).bin
 	tinyfpgab --program $<
+
+.PHONY: prove
+prove:
+	sby -f debounce.sby

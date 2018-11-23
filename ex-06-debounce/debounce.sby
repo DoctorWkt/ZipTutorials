@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 25
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -formal debounce.v
+prep -top debounce
+
+[files]
+debounce.v
